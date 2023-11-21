@@ -1,0 +1,72 @@
+:root {
+    --color-red: #f00;
+}
+
+* {
+    box-sizing: border-box;
+    font-size: 10px;
+    margin: 0;
+    padding: 0;
+}
+
+.appContainer {
+    width: 100vw;
+    height: 100vh;
+    /* background-image: url("./resources/deep-space.jpg");
+    background-size: cover; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: aliceblue;
+}
+
+.clockFrameContainer {
+    background-color: transparent;
+    width: 22%;
+    position: relative;
+}
+
+.clockFrameContainer img {
+    width: 100%;
+}
+
+.hourHand {
+    border: 3px solid black;
+    width: 30%;
+    position: absolute;
+    top: calc(50% - 3px);
+    left: 50%;
+    transform: rotate(30deg);
+    transform-origin: left;
+}
+
+.minuteHand {
+    border: 2px solid black;
+    width: 40%;
+    position: absolute;
+    top: calc(50% - 2px);
+    left: 50%;
+    transform: rotate(6deg);
+    transform-origin: left;
+}
+
+.secondHand {
+    border: 1px solid red;
+    width: 45%;
+    position: absolute;
+    top: calc(50% - 1px);
+    left: 50%;
+    transform: rotate(30deg);
+    transform-origin: left;
+}
+
+.centerKnob {
+    width: 2rem;
+    height: 2rem;
+    position: absolute;
+    border: 1rem solid black;
+    border-radius: 50%;
+    top: calc(50% - 1rem);
+    left: calc(50% - 1rem);
+}
