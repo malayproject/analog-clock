@@ -2,26 +2,26 @@
     "clockFaces": [
         {
             "id": 1,
-            "name": "face1",
-            "imageUrl": "./resources/final1.png",
+            "name": "bare",
+            "imageUrl": "./public/resources/final1.png",
             "imgClass": "cf1"
         },
         {
             "id": 2,
-            "name": "face2",
-            "imageUrl": "./resources/final2.png",
+            "name": "timer",
+            "imageUrl": "./public/resources/final2.png",
             "imgClass": "cf2"
         },
         {
             "id": 3,
-            "name": "face3",
-            "imageUrl": "./resources/final3.png",
+            "name": "wall clock",
+            "imageUrl": "./public/resources/final3.png",
             "imgClass": "cf3"
         },
         {
             "id": 4,
-            "name": "face4",
-            "imageUrl": "./resources/final4.png",
+            "name": "roman",
+            "imageUrl": "./public/resources/final4.png",
             "imgClass": "cf4"
         }
     ]

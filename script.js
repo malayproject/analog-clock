@@ -5,15 +5,17 @@ const sliderEl = document.querySelector(".slider");
 const sliderKnobEl = document.querySelector(".sliderKnob");
 const appContainerEl = document.querySelector(".appContainer");
 const clockFrameImgEl = document.querySelector("#clockFrameImg");
+const leftArrowEl = document.querySelector("#leftArrow");
+const rightArrowEl = document.querySelector("#rightArrow");
 
-sliderEl.addEventListener("click", (e) => {
+function setDarkTheme() {
   sliderKnobEl.classList.toggle("dark");
   sliderEl.classList.toggle("dark");
   appContainerEl.classList.toggle("dark");
   clockFrameImgEl.classList.toggle("dark");
   minuteHandEl.classList.toggle("dark");
   hourHandEl.classList.toggle("dark");
-});
+}
 
 function getTime() {
   const currTime = new Date();
@@ -32,7 +34,6 @@ function getTime() {
 setTimeout(getTime, 1000);
 
 function getClockFaceSetter() {
-  // let currFaceIndex = 0;
   let currFaceIndex = Number(localStorage.getItem("preferredClockFace")) || 0;
   const themeSelectEl = document.querySelector(".themeSelect");
   themeSelectEl.innerText = clockFaces[currFaceIndex].name;
@@ -55,12 +56,10 @@ function getClockFaceSetter() {
 let clockFaces;
 
 function init() {
-  fetch("../clockFaceConfig.json")
+  fetch("./clockFaceConfig.json")
     .then((res) => res.json())
     .then((data) => {
-      console.log(data);
       clockFaces = data.clockFaces;
-      console.log(clockFaces);
       const setClockFace = getClockFaceSetter();
       document
         .querySelector("#leftArrow")
@@ -68,6 +67,15 @@ function init() {
       document
         .querySelector("#rightArrow")
         .addEventListener("click", () => setClockFace(true));
+      if (localStorage.getItem("darkTheme") === "true") {
+        setDarkTheme();
+      }
+      sliderEl.addEventListener("click", (e) => {
+        setDarkTheme();
+        if (localStorage.getItem("darkTheme") === "true")
+          localStorage.setItem("darkTheme", false);
+        else localStorage.setItem("darkTheme", true);
+      });
     });
 }
 
