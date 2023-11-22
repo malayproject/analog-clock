@@ -5,14 +5,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Analog Clock</title>
     <link href="./style.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dosis:wght@300;400;500;700&family=Montserrat:wght@500;700&family=Mukta:wght@300;400;500;600;700;800&family=Roboto:wght@100;300;400;500&family=Syncopate:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <div class="appContainer">
+      <div class="settingsBar">
+        <div class="nightMode">
+          <span>Night Mode</span>
+          <div class="slider">
+            <div class="sliderKnob"></div>
+          </div>
+        </div>
+        <div class="themeContainer">
+          <span>Clock Face</span>
+          <div class="theme">
+            <img
+              src="./resources/icons/angle-left-solid.svg"
+              width="10px"
+              id="leftArrow"
+            />
+            <div class="themeSelect"></div>
+            <img
+              src="./resources/icons/angle-right-solid.svg"
+              width="10px"
+              id="rightArrow"
+            />
+          </div>
+        </div>
+      </div>
       <div class="clockFrameContainer">
         <img
-          src="./resources/pngwing.com (4).png"
+          src="./resources/final1.png"
           alt="analog-clock-frame1.png"
-          class="clockFrame"
+          class="clockFrameImg"
+          id="clockFrameImg"
         />
         <div class="hourHand"></div>
         <div class="minuteHand"></div>
@@ -20,6 +51,6 @@
         <div class="centerKnob"></div>
       </div>
     </div>
-    <script src="./script.js"></script>
+    <script src="./script.js" type="module"></script>
   </body>
 </html>

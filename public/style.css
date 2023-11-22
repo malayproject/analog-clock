@@ -7,6 +7,16 @@
     font-size: 10px;
     margin: 0;
     padding: 0;
+    /* font-family: 'Dosis', sans-serif; */
+    font-weight: 700;
+/* font-family: 'Montserrat', sans-serif; */
+font-family: 'Mukta', sans-serif;
+/* font-family: 'Roboto', sans-serif;
+font-family: 'Syncopate', sans-serif; */
+}
+
+.dark {
+    color: whitesmoke;
 }
 
 .appContainer {
@@ -21,14 +31,116 @@
     background-color: aliceblue;
 }
 
+.appContainer.dark {
+    background-color: #141414;
+}
+
+.settingsBar {
+    width: 100%;
+    height: 7rem;
+    /* border: 1px solid black; */
+    position: fixed;
+    top: 0;
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+}
+
+.nightMode {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 16rem;
+    gap: 1rem;
+
+}
+
+.nightMode span, .themeContainer span {
+    font-size: 1.5rem;
+}
+
+.slider {
+    width: 4.5rem;
+    height: 2.4rem;
+    border-radius: 1.2rem;
+    /* border: 1px solid black; */
+    background-color: wheat;
+    inset: 0.5rem;
+    display: flex;
+    align-items: center;
+    padding: 0 0.4rem;
+
+}
+
+.slider.dark {
+    background-color: #cccccc;
+}
+
+.sliderKnob {
+    width: 1.8rem;
+    height: 1.8rem;
+    background-color: rgb(230, 126, 0);
+    border-radius: 0.9rem;
+    transition: all 0.3s ease-in-out;
+}
+
+.sliderKnob.dark {
+    transform: translateX(2rem);
+    background-color: #494949;
+}
+
+.themeContainer {
+    padding: 1rem;
+    width: fit-content;
+    /* border: 1px solid black; */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.theme {
+    display: flex;
+    flex-direction: row;
+    min-width: 30rem;
+    gap: 1rem;
+}
+
+.theme img {
+    flex-basis: 6%;
+    flex-grow: 1;
+    flex-shrink: 1;
+}
+
+.themeSelect {
+    flex-basis: 100%;
+    flex-grow: 16;
+    flex-shrink: 16;
+    /* border: 4px solid black; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    box-shadow: 0 0 4px 1px  rgb(156, 150, 150);
+    border-radius: 1rem;
+}
+
 .clockFrameContainer {
     background-color: transparent;
     width: 22%;
     position: relative;
+    /* border: 1px solid black; */
 }
 
-.clockFrameContainer img {
+.clockFrameContainer .clockFrameImg {
     width: 100%;
+    /* filter: invert(100%); */
+}
+
+.clockFrameContainer .clockFrameImg.dark {
+
+    filter: invert(100%);
 }
 
 .hourHand {
@@ -41,6 +153,10 @@
     transform-origin: left;
 }
 
+.hourHand.dark {
+    border: 3px solid whitesmoke;
+}
+
 .minuteHand {
     border: 2px solid black;
     width: 42%;
@@ -49,6 +165,10 @@
     left: 50%;
     transform: rotate(-90deg);
     transform-origin: left;
+}
+
+.minuteHand.dark {
+    border: 2px solid whitesmoke;
 }
 
 .secondHand {
