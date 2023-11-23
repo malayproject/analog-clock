@@ -8,6 +8,14 @@ const clockFrameImgEl = document.querySelector("#clockFrameImg");
 const leftArrowEl = document.querySelector("#leftArrow");
 const rightArrowEl = document.querySelector("#rightArrow");
 
+function setSvgColor() {
+  const fillColorLeft = leftArrowEl.firstElementChild.style;
+  const fillColorRight = rightArrowEl.firstElementChild.style;
+  fillColorLeft.fill = fillColorLeft.fill === "black" ? "whitesmoke" : "black";
+  fillColorRight.fill =
+    fillColorRight.fill === "black" ? "whitesmoke" : "black";
+}
+
 function setDarkTheme() {
   sliderKnobEl.classList.toggle("dark");
   sliderEl.classList.toggle("dark");
@@ -15,6 +23,7 @@ function setDarkTheme() {
   clockFrameImgEl.classList.toggle("dark");
   minuteHandEl.classList.toggle("dark");
   hourHandEl.classList.toggle("dark");
+  setSvgColor();
 }
 
 function getTime() {
